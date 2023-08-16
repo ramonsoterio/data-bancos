@@ -171,7 +171,7 @@ bancos.nome = df_bancos.nome.str.replace('- PRUDENCIAL', '', case=False, regex=T
 # merges baseado nos bancos dos arquivos de reclamacoes
 result = pd.merge(reclamacoes, indices, on='nome', how='left')
 result = pd.merge(result, clientes, on='nome', how='left')
-result = pd.merge(result, satisfacao, on='nome', how='left')
+result = pd.merge(result, satisfacao, on='nome', how='outer')
 result = pd.merge(result, bancos, on='nome', how='left')
 
 # arquivo salvo
